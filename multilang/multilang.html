@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sitesi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .menu li a:hover {
+            background-color: #555;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center; /* Dikey hizalama */
+        }
+
+        .dropdown-content a img {
+            margin-right: 10px; /* Resimlerin metinle arasına boşluk ekler */
+            width: 20px; /* Resimlerin genişliği */
+            height: 20px; /* Resimlerin yüksekliği */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropbtn {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .dropbtn:hover {
+            background-color: #555;
+        }
+        .skiptranslate{
+            display: none;
+        }
+        body{
+            top: 0px !important;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="google_translate_element" style="display:none"></iframe>
+<nav>
+    <ul class="menu">
+        <li><a href="#">Ana Sayfa</a></li>
+        <li><a href="#">Hakkımızda</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Dil Seçenekleri ▼</a>
+            <div class="dropdown-content">
+                <a onclick="changeLanguage('tr')"><img src="/img/tr.png" alt="Türkçe"> Türkçe</a>
+                <a onclick="changeLanguage('en')"><img src="/img/en.png" alt="English"> English</a>
+                <a onclick="changeLanguage('fr')"><img src="/img/fr.png" alt="Français"> Français</a>
+               
+            </div>
+        </li>
+    </ul>
+</nav>
+<h1>Çevirelecek Metin</h1>
+<br>
+<p>
+    Günümüzde enerji ihtiyacı giderek artarken, çevre dostu ve sürdürülebilir bir enerji kaynağı arayışı da hızla artıyor. Bu bağlamda, yeşil enerjiye geçiş giderek daha fazla önem kazanıyor. Yeşil enerji, fosil yakıtlara dayalı enerji kaynaklarının aksine, doğal kaynaklardan elde edilen ve çevreye zarar vermeyen enerji türlerini ifade eder.
+</p>
+</body>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'tr'
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    function changeLanguage(language) {
+        var selectElement = document.querySelector('.goog-te-combo');
+        selectElement.value = language;
+        selectElement.dispatchEvent(new Event('change'));
+    }
+</script>
+</html>
